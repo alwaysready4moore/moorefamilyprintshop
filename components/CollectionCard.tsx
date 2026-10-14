@@ -4,17 +4,15 @@ import type { Collection } from "../data/collections";
 
 export default function CollectionCard({ collection }: { collection: Collection }) {
   return (
-    <Link className="collectionCard" href={`/shop#${collection.slug}`} aria-label={`Browse ${collection.name}`}>
+    <Link className="collectionCard" href={`/collections/${collection.slug}`} aria-label={`Explore ${collection.name}`}>
       <div className="collectionImageWrap">
-        <Image
-          src={collection.image}
-          alt={collection.alt}
-          fill
-          sizes="(max-width: 700px) 46vw, 20vw"
-          className="collectionImage"
-        />
+        <Image src={collection.image} alt={collection.alt} fill sizes="(max-width: 700px) 75vw, (max-width: 1100px) 32vw, 220px" className="collectionImage" />
+        <span className="collectionArrow" aria-hidden="true">↗</span>
       </div>
-      <span>{collection.name}</span>
+      <div className="collectionInfo">
+        <h3>{collection.name}</h3>
+        <p>{collection.description}</p>
+      </div>
     </Link>
   );
 }

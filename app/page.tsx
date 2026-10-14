@@ -2,106 +2,77 @@ import Image from "next/image";
 import Link from "next/link";
 import CollectionCard from "../components/CollectionCard";
 import ProductCard from "../components/ProductCard";
+import ReviewCards from "../components/ReviewCards";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { collections } from "../data/collections";
 import { products } from "../data/products";
 import { studio } from "../data/siteContent";
 
+const spotlight = ["Did You Open a Ticket Desk Sign", "Kawaii Dumpster Fire", "Thumb Wrestling Arena"];
 export default function HomePage() {
-  const featured = products.filter((product) => product.featured).slice(0, 3);
-
+  const featured = spotlight.map(name => products.find(p => p.name === name)).filter((p): p is (typeof products)[number] => Boolean(p));
   return (
     <main id="top">
       <SiteHeader />
-
       <section className="hero">
         <div className="pageWidth heroInner">
           <div className="heroCopy">
-            <p className="eyebrow"><span>✨</span> HANDCRAFTED GOODS AND MOORE <span>✨</span></p>
-            <h1>Moore Family<br />Print Shop</h1>
-            <p className="lead">Colorful 3D printed creatures,<br className="desktopBreak" /> cozy desk friends &amp; tiny<br className="desktopBreak" /> treasures — made with love for<br className="desktopBreak" /> collectors and dreamers.</p>
+            <p className="eyebrow">A FAMILY-RUN 3D PRINT SHOP <span aria-hidden="true">✳</span> MADE IN DELAWARE</p>
+            <h1>Moore Family <span>Print Shop</span></h1>
+            <p className="heroScript">Tiny treasures. Lots of personality.</p>
+            <p className="lead">Colorful desk friends, playful fidgets, collectible gifts, and delightfully unexpected little things. Made with care, just for the joy of it.</p>
             <div className="buttonStack">
-              <Link className="gradientButton" href="/shop">Shop Our Collection</Link>
-              <a className="gradientButton" href="https://nicelittleclick.com" target="_blank" rel="noreferrer">Nice Little Click</a>
+              <Link className="gradientButton" href="/shop">Explore our shop <span aria-hidden="true">↗</span></Link>
+              <a className="secondaryButton" href="https://www.etsy.com/shop/MooreFamilyPrintShop" target="_blank" rel="noopener noreferrer">Visit us on Etsy ↗</a>
             </div>
+            <div className="heroProof"><span className="proofStars" aria-hidden="true">★★★★★</span><span>Loved by shoppers on Etsy</span></div>
           </div>
-
-          <div className="heroArt" aria-label="Featured Moore Family Print Shop products">
-            <div className="heroPhoto heroPhotoLeft">
-              <Image src="/products/ticket-sign.webp" alt="Did You Open a Ticket desk sign" fill priority sizes="260px" />
-            </div>
-            <div className="heroPhoto heroPhotoRight">
-              <Image src="/products/dumpster-fire.webp" alt="Kawaii dumpster fire desk friend" fill priority sizes="260px" />
-            </div>
+          <div className="heroArt" aria-label="Featured 3D printed creations from our shop">
+            <div className="heroGlow" aria-hidden="true"></div>
+            <div className="heroPhoto heroPhotoLeft"><Image src="/products/ticket-sign.webp" alt="Did You Open a Ticket freestanding desk sign" fill priority sizes="(max-width: 700px) 54vw, 340px" /></div>
+            <div className="heroPhoto heroPhotoRight"><Image src="/products/dumpster-fire.webp" alt="Smiling mint green 3D printed dumpster fire with orange flames" fill priority sizes="(max-width: 700px) 46vw, 280px" /></div>
+            <span className="heroSticker" aria-hidden="true">made with <br />♡</span>
           </div>
         </div>
       </section>
+      <div className="trustStrip"><div className="pageWidth trustInner"><span>✳ Family owned</span><span>♡ Printed with care</span><span>✦ Wonderfully giftable</span><span>↗ Checkout on Etsy</span></div></div>
 
       <section className="collectionsSection sectionPad">
         <div className="pageWidth">
           <div className="sectionHeadingRow">
-            <div>
-              <p className="kicker">Find your favorite kind of tiny</p>
-              <h2>Shop Our Collections</h2>
-            </div>
-            <Link className="textLink" href="/shop">Visit the full shop →</Link>
+            <div><p className="kicker">Discover your next favorite thing</p><h2>Find your happy place<span className="headingDot">.</span></h2></div>
+            <Link className="textLink" href="/shop">See all collections ↗</Link>
           </div>
-          <div className="collectionGrid">
-            {collections.map((collection) => (
-              <CollectionCard key={collection.slug} collection={collection} />
-            ))}
-          </div>
+          <div className="collectionGrid">{collections.map(collection => <CollectionCard key={collection.slug} collection={collection} />)}</div>
         </div>
       </section>
 
       <section className="lavenderBand sectionPad">
-        <div className="pageWidth narrowWidth">
-          <h2 className="withIcon"><span className="bigStar">★</span> Best Sellers</h2>
-          <div className="productGrid homeProductGrid">
-            {featured.map((product) => (
-              <ProductCard key={product.name} product={product} />
-            ))}
-          </div>
-          <div className="centerAction">
-            <Link className="outlineButton" href="/shop">See the full shop →</Link>
-          </div>
+        <div className="pageWidth">
+          <div className="sectionHeadingRow"><div><p className="kicker">Little crowd-pleasers</p><h2>Shop favorites <span className="titleSparkle">✳</span></h2></div><Link className="textLink" href="/shop">Browse the whole shop ↗</Link></div>
+          <div className="productGrid homeProductGrid">{featured.map(product => <ProductCard key={product.name} product={product} />)}</div>
+          <p className="priceNote">*Displayed prices are a guide. Etsy shows current pricing and availability.</p>
         </div>
       </section>
 
       <section className="mintBand sectionPad">
         <div className="pageWidth aboutSection">
-          <div className="roundLogo">
-            <Image src="/brand/family-logo.webp" alt="Moore Family Print Shop family logo" fill sizes="180px" />
-          </div>
-          <div className="aboutCopy">
-            <p className="kicker">Our little family shop</p>
-            <h2>Made With Love <span className="heart">♥</span></h2>
-            <p>At Moore Family Print Shop, we specialize in crafting high-quality 3D prints that bring your ideas to life.</p>
-            <Link className="textLink" href="/our-story">Read our story →</Link>
-          </div>
+          <div className="aboutLogoFrame"><div className="roundLogo"><Image src="/brand/family-logo.webp" alt="Illustrated Moore Family Print Shop family logo" fill sizes="220px" /></div><span className="roundLogoStamp">hello from us!</span></div>
+          <div className="aboutCopy"><p className="kicker">A little about the makers</p><h2>From our family <span className="heart">to yours.</span></h2><p>We believe everyday objects should be fun to look at and even more fun to give. Our family print shop brings together playful ideas, licensed designs, and a whole lot of love for the details.</p><Link className="textLink" href="/our-story">Meet the Moore Family ↗</Link></div>
         </div>
+      </section>
+
+      <section className="reviewsSection sectionPad">
+        <div className="pageWidth"><div className="sectionHeadingRow"><div><p className="kicker">Kind words from real customers</p><h2>Happy little reviews<span className="headingDot">.</span></h2></div><a className="textLink" href="https://www.etsy.com/shop/MooreFamilyPrintShop#reviews" target="_blank" rel="noopener noreferrer">More on Etsy ↗</a></div><ReviewCards /></div>
       </section>
 
       <section className="creamBand sectionPad">
-        <div className="pageWidth narrowWidth">
-          <div className="sectionHeadingRow">
-            <div>
-              <p className="kicker">Fresh off the printer</p>
-              <h2>From Our Studio <span className="sparkles">✦</span></h2>
-            </div>
-            <Link className="textLink" href="/studio">Visit the studio →</Link>
-          </div>
-          <div className="studioGrid">
-            {studio.slice(0, 4).map((item) => (
-              <div className="studioTile" key={item.src}>
-                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 700px) 46vw, 240px" />
-              </div>
-            ))}
-          </div>
+        <div className="pageWidth">
+          <div className="sectionHeadingRow"><div><p className="kicker">Fresh from our little corner</p><h2>A peek at the prints <span className="titleSparkle">✳</span></h2></div><Link className="textLink" href="/studio">Visit the studio ↗</Link></div>
+          <div className="studioGrid">{studio.slice(0,4).map(item => <div className="studioTile" key={item.src}><Image src={item.src} alt={item.alt} fill sizes="(max-width: 700px) 50vw, 25vw" /></div>)}</div>
         </div>
       </section>
-
       <SiteFooter />
     </main>
   );
