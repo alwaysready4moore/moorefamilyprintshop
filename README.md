@@ -1,34 +1,41 @@
 # Moore Family Print Shop
 
-A custom Next.js storefront for Moore Family Print Shop. The site acts as a colorful catalog and sends customers to Etsy for checkout.
+A family-run Next.js storefront that sends shoppers to Etsy for checkout.
 
 ## Pages
 
-- `/` — Home: hero, collection preview, bestseller preview, story preview, studio preview
-- `/shop` — Collections, all current bestseller cards, and Etsy checkout handoff
-- `/our-story` — About the shop, licensed designers, and customer reviews
-- `/studio` — Larger behind-the-scenes gallery
+- Home `/`
+- Shop `/shop`
+- Our Story `/our-story`
+- Studio `/studio`
+- Individual collections `/collections/[slug]`
 
-## Local development
+## Build
 
 ```bash
 npm install
-npm run dev
+npm run build
+npm start
 ```
 
-Then open `http://localhost:3000`.
+## High-resolution photo upgrade
 
-## Deploy
+This project supports an optional one-file photo upgrade for the owner's
+original photographs. Upload `moorefamily-photo-upgrade.tar.gz` to the ROOT
+of this GitHub repository using **Add file > Upload files > Commit changes**.
+Do not unzip or rename the archive before uploading it.
 
-Push this folder to GitHub and connect the repository to Netlify. Netlify should detect Next.js automatically.
+Every subsequent Netlify build will extract the high-resolution WebP photos
+into their original `public/...` paths, replacing the tiny provisional copies.
+No changes to the CSS, component image paths or deployment settings are needed.
+The script quietly uses existing files until the archive has been uploaded.
 
-## Product updates
+Some submitted keychain and clicker pictures were only 200×200 pixels.
+Those cannot be made genuinely sharp for large retina displays without
+higher-resolution originals; Etsy-hosted photos are preferred when available.
 
-Edit `data/products.ts` to change products, prices, photos, featured status, and Etsy URLs.
-Edit `data/collections.ts` for collection names and images.
-Edit `data/siteContent.ts` for reviews and studio images.
+## Updating products
 
-Images live under `public/`.
-
-## v4 image refresh
-This version replaces the temporary Canva screenshot crops with original supplied product photography and logo assets. Pocket Worlds currently uses the straw-hat character charm, and Cute Chaos uses the blue paw clicker as their collection thumbnails. The Studio page now includes seven supplied product photos.
+Edit `data/products.ts` for products, prices, photos and Etsy listings.
+Edit `data/collections.ts` for collection cards.
+Edit `data/siteContent.ts` for reviews and studio imagery.

@@ -30,7 +30,7 @@ export default function HomePage() {
           </div>
           <div className="heroArt" aria-label="Featured 3D printed creations from our shop">
             <div className="heroGlow" aria-hidden="true"></div>
-            <div className="heroPhoto heroPhotoLeft"><Image src="/products/ticket-sign.webp" alt="Did You Open a Ticket freestanding desk sign" fill priority sizes="(max-width: 700px) 54vw, 340px" /></div>
+            <div className="heroPhoto heroPhotoLeft"><Image src="https://i.etsystatic.com/35919048/r/il/e3928d/8004940650/il_794xN.8004940650_9j24.jpg" alt="Did You Open a Ticket freestanding desk sign" fill priority sizes="(max-width: 700px) 54vw, 340px" /></div>
             <div className="heroPhoto heroPhotoRight"><Image src="/products/dumpster-fire.webp" alt="Smiling mint green 3D printed dumpster fire with orange flames" fill priority sizes="(max-width: 700px) 46vw, 280px" /></div>
             <span className="heroSticker" aria-hidden="true">made with <br />♡</span>
           </div>
