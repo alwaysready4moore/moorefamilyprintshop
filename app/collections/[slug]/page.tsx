@@ -10,32 +10,32 @@ import { products } from "../../../data/products";
 
 const details: Record<string, {headline: string; intro: string; productNames: string[]; extras: {image:string;alt:string}[]}> = {
   "tiny-treasures": {
-    headline: "Small in size. Big on charm.",
-    intro: "Miniatures and sweet little details made for shelves, desks, and the people who notice the small things.",
+    headline: "Tiny Treasures",
+    intro: "Miniature trees, novelty items, and other small prints for desks and display shelves.",
     productNames: ["Spongebob Dollar Enamel Pin"],
     extras: [{image:"/collections/tiny-treasures.webp",alt:"Tiny tree miniatures on a wooden desk"}],
   },
   "cozy-desk-friends": {
-    headline: "Give your workspace a little company.",
-    intro: "Cheerful companions, flowers that never wilt, and conversation starters for your desk.",
+    headline: "Cozy Desk Friends",
+    intro: "3D-printed desk signs, flower pots, and decorations for home and workspaces.",
     productNames: ["Kawaii Dumpster Fire","Did You Open a Ticket Desk Sign"],
     extras: [{image:"/collections/cozy-desk-friends.webp",alt:"Soft pink and white printed flowers"}],
   },
   "pocket-worlds": {
-    headline: "A little adventure goes everywhere.",
-    intro: "Pocket-friendly charms and mini collectibles for bags, keys, and everyday adventures.",
+    headline: "Pocket Worlds",
+    intro: "Keychains, bag charms, and small character accessories.",
     productNames: ["Spongebob Spooky Ghost Keychain","Llama Potion Fidget Keychain"],
     extras: [{image:"/collections/pocket-worlds.webp",alt:"Straw-hat character charm"},{image:"/studio/pink-hair-charm.webp",alt:"Pink-haired character keychain"},{image:"/studio/white-hair-charm.webp",alt:"White-haired character keychain"}],
   },
   "pokemon-league": {
-    headline: "For the collectors at heart.",
-    intro: "Playful collectible displays and gamer-inspired treasures worth making room for.",
+    headline: "Pokémon League",
+    intro: "Display pieces and accessories for Pokémon cards and other collectibles.",
     productNames: [],
     extras: [{image:"/collections/pokemon-league.webp",alt:"Purple collectible figure and a trading card"}],
   },
   "cute-chaos": {
-    headline: "Just the right amount of ridiculous.",
-    intro: "Clicky, quirky, smile-inducing prints for people who enjoy a little silliness.",
+    headline: "Cute Chaos",
+    intro: "Fidgets, clickers, novelty gifts, and the prints we make mostly because they're funny.",
     productNames: ["Thumb Wrestling Arena","Kawaii Dumpster Fire","Llama Potion Fidget Keychain"],
     extras: [{image:"/collections/cute-chaos.webp",alt:"Blue paw-shaped clicker toy"}],
   },
@@ -65,7 +65,7 @@ export default async function CollectionPage({params}: {params: Promise<{slug:st
         <div className="pageWidth collectionHeroInner">
           <div className="collectionHeroCopy">
             <Link className="backLink" href="/shop">← All collections</Link>
-            <p className="kicker">The {collection.name} collection</p>
+            <p className="kicker">COLLECTION</p>
             <h1>{detail.headline}</h1>
             <p>{detail.intro}</p>
             <a className="gradientButton inlineButton" href="https://www.etsy.com/shop/MooreFamilyPrintShop" target="_blank" rel="noopener noreferrer">Explore on Etsy ↗</a>
@@ -73,10 +73,10 @@ export default async function CollectionPage({params}: {params: Promise<{slug:st
           <div className="collectionHeroImage"><Image src={collection.image} alt={collection.alt} fill priority sizes="(max-width:700px) 95vw, 500px" /></div>
         </div>
       </section>
-      {picks.length > 0 && <section className="sectionPad"><div className="pageWidth"><p className="kicker centeredKicker">A few things you might love</p><h2>Featured finds<span className="headingDot">.</span></h2><div className="productGrid">{picks.map(product => <ProductCard key={product.name} product={product} />)}</div><p className="priceNote">*Etsy confirms current prices and availability.</p></div></section>}
+      {picks.length > 0 && <section className="sectionPad"><div className="pageWidth"><p className="kicker centeredKicker">SELECTED ITEMS</p><h2>Products in this collection</h2><div className="productGrid">{picks.map(product => <ProductCard key={product.name} product={product} />)}</div><p className="priceNote">*Etsy confirms current prices and availability.</p></div></section>}
       <section className="creamBand sectionPad">
         <div className="pageWidth">
-          <p className="kicker centeredKicker">A little look around</p><h2>From the collection <span className="titleSparkle">✳</span></h2>
+          <p className="kicker centeredKicker">GALLERY</p><h2>Product photos</h2>
           <div className="collectionGallery">{detail.extras.map(item => <div className="studioTile" key={item.image}><Image src={item.image} alt={item.alt} fill sizes="(max-width:700px) 95vw, 40vw" /></div>)}</div>
           <div className="centerAction"><a className="outlineButton" href="https://www.etsy.com/shop/MooreFamilyPrintShop" target="_blank" rel="noopener noreferrer">See what's currently available on Etsy ↗</a></div>
         </div>

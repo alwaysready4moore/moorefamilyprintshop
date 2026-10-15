@@ -7,7 +7,7 @@ import { studio } from "../../data/siteContent";
 
 export const metadata: Metadata = {
   title: "Studio",
-  description: "A peek behind the scenes at colorful 3D printed creations from Moore Family Print Shop.",
+  description: "Photos of 3D-printed miniatures, keychains, desk decor and other items from Moore Family Print Shop.",
 };
 
 export default function StudioPage() {
@@ -16,9 +16,9 @@ export default function StudioPage() {
       <SiteHeader />
       <section className="pageHero creamPageHero">
         <div className="pageWidth narrowWidth pageHeroInner">
-          <p className="eyebrow"><span>✨</span> A PEEK BEHIND THE PRINTS <span>✨</span></p>
-          <h1>From Our Studio <span className="sparkles">✦</span></h1>
-          <p>Small prints, cheerful experiments, and the tiny details that make the shop feel like us.</p>
+          <p className="eyebrow">PHOTO GALLERY</p>
+          <h1>From Our Studio</h1>
+          <p>A closer look at the 3D prints, keychains, and desk accessories featured in our shop.</p>
         </div>
       </section>
 
@@ -39,10 +39,10 @@ export default function StudioPage() {
 
       <section className="mintBand studioCta sectionPad">
         <div className="pageWidth narrowWidth">
-          <h2>See something you love?</h2>
-          <p>Take a look through the shop, or visit Etsy for the latest available listings.</p>
+          <h2>Browse available products</h2>
+          <p>Browse the catalog here or visit Etsy to see current listings and prices.</p>
           <div className="dualActions">
-            <Link className="gradientButton inlineButton" href="/shop">Shop the collection</Link>
+            <Link className="gradientButton inlineButton" href="/shop">Browse products</Link>
             <a className="outlineButton" href="https://www.etsy.com/shop/MooreFamilyPrintShop" target="_blank" rel="noreferrer">Visit Etsy ↗</a>
           </div>
         </div>

@@ -10,8 +10,8 @@ export default function SiteFooter() {
             <span className="brandMark"><Image src="/brand/family-logo.webp" alt="" fill sizes="50px" /></span>
             <span className="brandWords"><strong>Moore Family</strong><small>PRINT SHOP</small></span>
           </Link>
-          <p>Small-batch 3D printed happiness, from our family to yours.</p>
-          <span className="footerSignature">Made with love in Delaware ♡</span>
+          <p>3D-printed desk accessories, fidgets, keychains, and collectibles from our family shop in Delaware.</p>
+          <span className="footerSignature">Based in Delaware</span>
         </div>
         <div className="footerColumn">
           <h3>Explore</h3>
@@ -20,13 +20,13 @@ export default function SiteFooter() {
           <Link href="/our-story">Our story</Link>
         </div>
         <div className="footerColumn">
-          <h3>Stay a while</h3>
+          <h3>Find us</h3>
           <a href="https://www.etsy.com/shop/MooreFamilyPrintShop" target="_blank" rel="noopener noreferrer">Our Etsy shop ↗</a>
           <a href="https://nicelittleclick.com" target="_blank" rel="noopener noreferrer">Nice Little Click ↗</a>
           <a href="https://www.etsy.com/shop/MooreFamilyPrintShop#reviews" target="_blank" rel="noopener noreferrer">Customer reviews ↗</a>
         </div>
       </div>
-      <div className="pageWidth footerBottom"><span>© 2026 Moore Family Print Shop</span><span>Made by humans, with a little help from a printer.</span></div>
+      <div className="pageWidth footerBottom"><span>© 2026 Moore Family Print Shop</span><span>Shop and checkout on Etsy.</span></div>
     </footer>
   );
 }

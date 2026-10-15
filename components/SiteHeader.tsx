@@ -11,7 +11,7 @@ const links = [
 export default function SiteHeader() {
   return (
     <>
-      <div className="topNote">Family-run in Delaware <span aria-hidden="true">✦</span> Made with care, delivered with joy</div>
+      <div className="topNote">Family-owned 3D print shop <span aria-hidden="true">✦</span> Based in Delaware</div>
       <header className="siteHeader">
         <div className="pageWidth headerInner">
           <Link className="brandLockup" href="/" aria-label="Moore Family Print Shop, home">

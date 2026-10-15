@@ -25,11 +25,11 @@ export const reviews = [
 ];
 
 export const studio = [
-  { src: "/collections/pocket-worlds.webp", alt: "Straw-hat character charm on a white background", label: "Pocket-sized fandom" },
-  { src: "/collections/tiny-treasures.webp", alt: "Miniature trees from the shop", label: "Tiny trees, big charm" },
-  { src: "/collections/cozy-desk-friends.webp", alt: "Pink and white printed flowers in a textured pot", label: "Florals that stay forever" },
-  { src: "/collections/cute-chaos.webp", alt: "Blue paw-shaped clicker toy", label: "A little click of happiness" },
-  { src: "/studio/pink-hair-charm.webp", alt: "Pink-haired character keychain on a desk", label: "Pocket-sized character charm" },
-  { src: "/studio/white-hair-charm.webp", alt: "White-haired character keychain", label: "Made to tag along" },
-  { src: "/studio/retro-charm.webp", alt: "Orange miniature retro screen keychain", label: "Tiny nostalgia" },
+  { src: "/collections/pocket-worlds.webp", alt: "Straw-hat character charm on a white background", label: "Straw-hat keychain" },
+  { src: "/collections/tiny-treasures.webp", alt: "Miniature trees from the shop", label: "Miniature trees" },
+  { src: "/collections/cozy-desk-friends.webp", alt: "Pink and white printed flowers in a textured pot", label: "Printed flower pot" },
+  { src: "/collections/cute-chaos.webp", alt: "Blue paw-shaped clicker toy", label: "Paw-shaped clicker" },
+  { src: "/studio/pink-hair-charm.webp", alt: "Pink-haired character keychain on a desk", label: "Pink-haired character keychain" },
+  { src: "/studio/white-hair-charm.webp", alt: "White-haired character keychain", label: "White-haired character keychain" },
+  { src: "/studio/retro-charm.webp", alt: "Orange miniature retro screen keychain", label: "Retro screen keychain" },
 ];
